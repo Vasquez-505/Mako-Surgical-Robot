@@ -1,55 +1,34 @@
-# Mako Surgical Robot — Kinematics & Dynamics
+# Mako surgical robot
 
-Laboratory project developed for the Robotic Manipulation course at 
-Instituto Superior Técnico (IST), Master's in Mechanical Engineering 
-— Specialization in Systems, Robotics and AI.
+Lab project for the Robotic Manipulation course at Instituto Superior Técnico (IST), Master's in Mechanical Engineering, Specialization in Systems, Robotics and AI.
 
 ## Contributors
-- Pedro Vasques — [@Vasquez-505](https://github.com/Vasquez-505)
+- Pedro Vasques ([@Vasquez-505](https://github.com/Vasquez-505))
 - Abdul Hannan Chowdhury
 
-## Project Overview
+## Project overview
 
-Complete kinematic and dynamic modelling of the **Mako surgical 
-manipulator by Stryker** — one of the leading orthopaedic surgical 
-robots globally — implemented in MATLAB and Simulink.
+Complete kinematic and dynamic modelling of the **Mako surgical manipulator by Stryker**, one of the leading orthopaedic surgical robots globally, implemented in MATLAB and Simulink.
 
-## Part 1 — Robot Kinematics (May 2025)
+## Part 1: Robot Kinematics (May 2025)
 
-- Denavit-Hartenberg kinematic model — full DH parameter table 
-  and frame assignment for the 6-DOF manipulator
-- Direct kinematics Simulink model — validated through known 
-  configurations and 3D VR visualization
-- Closed-form inverse kinematics — kinematic decoupling approach 
-  separating position and orientation subproblems
-- Geometric Jacobian — computed symbolically and validated via 
-  finite differences (maximum error of 1×10⁻¹¹)
-- Singularity detection — arm and wrist singularities identified 
-  via structured sampling across joint configurations
-- Closed-Loop Inverse Kinematics (CLIK) — iterative numerically 
-  stable IK using Jacobian pseudo-inverse
+- Denavit-Hartenberg kinematic model: full DH parameter table and frame assignment for the 6-DOF manipulator
+- Direct kinematics Simulink model, validated through known configurations and 3D VR visualization
+- Closed-form inverse kinematics via kinematic decoupling, separating position and orientation subproblems
+- Geometric Jacobian, computed symbolically and validated via finite differences (maximum error of 1×10⁻¹¹)
+- Singularity detection: arm and wrist singularities identified via structured sampling across joint configurations
+- Closed-Loop Inverse Kinematics (CLIK): iterative, numerically stable IK using Jacobian pseudo-inverse
 
-## Part 2 — Dynamics & Control (June 2025)
+## Part 2: Dynamics & Control (June 2025)
 
-- Link physical parameter estimation — mass, center of mass, and 
-  inertia tensors for each link using geometric approximations
-- Full dynamic model via Newton-Euler formulation — symbolic 
-  torque computation in MATLAB, exported as numeric function 
-  and integrated as a Simulink block
-- Worst-case inertia configuration analysis — joint space inertia 
-  matrix computed symbolically to identify maximum load conditions
-- Decentralized PID joint controllers — individually tuned per 
-  joint using worst-case inertia, achieving settling within 1.3s 
-  with minimal overshoot
-- Centralized inverse dynamics controller — full nonlinear 
-  compensation using computed torque control law, achieving 
-  settling within 0.7s
-- Task-space trajectory tracking — end-effector moved from 
-  p_A=[0.2, 0.1, 0.2]m to p_B=[0.6, 0.1, 0.2]m using cubic 
-  polynomial trajectories, with performance comparison between 
-  both controllers
+- Link physical parameter estimation: mass, center of mass, and inertia tensors for each link using geometric approximations
+- Full dynamic model via Newton-Euler formulation, with symbolic torque computation in MATLAB exported as a numeric function and integrated as a Simulink block
+- Worst-case inertia configuration analysis: joint space inertia matrix computed symbolically to identify maximum load conditions
+- Decentralized PID joint controllers, individually tuned per joint using worst-case inertia, settling within 1.3s with minimal overshoot
+- Centralized inverse dynamics controller with full nonlinear compensation via computed torque control law, settling within 0.7s
+- Task-space trajectory tracking: end-effector moved from p_A=[0.2, 0.1, 0.2]m to p_B=[0.6, 0.1, 0.2]m using cubic polynomial trajectories, comparing both controllers
 
-## Key Results
+## Key results
 
 | Controller | Settling Time | Overshoot |
 |---|---|---|
@@ -58,5 +37,6 @@ robots globally — implemented in MATLAB and Simulink.
 
 Jacobian validation error: < 1×10⁻¹¹ across all matrix entries
 
-## Tech Stack
+## Tech stack
+
 MATLAB · Simulink · Symbolic Math Toolbox · Robotics Toolbox
